@@ -1,0 +1,52 @@
+AUM SHREEGANESHAAYA NAMAH||
+
+http://snap.stanford.edu/data/soc-RedditHyperlinks.html
+http://snap.stanford.edu/conflict/
+https://arxiv.org/pdf/1803.03697.pdf
+https://github.com/williamleif/social-lstm
+http://snap.stanford.edu/data/web-RedditEmbeddings.html
+
+In this research paper (published at The Web Conference, WWW 2018), we conduct a data driven
+analysis of how conflicts/raids occur between communities in Reddit, their impact, mitigation, and prediction.
+
+User-defined communities are an essential component of many web platforms, where users express their ideas,
+opinions, and share information. However, despite their positive benefits, online communities also have the
+potential to be breeding grounds for conflict and anti-social behavior.
+
+Here we used 40 months of Reddit comments and posts (available at pushshift.io, many thanks to Jason Michael
+Baumgartner!) to examine cases of intercommunity conflict ('wars' or 'raids'), where members of one Reddit
+community, called "subreddit", collectively mobilize to participate in or attack another community.
+
+We discovered these conflict events by searching for cases where one community posted a hyperlink to another
+community, focusing on cases where these hyperlinks were associated with negative sentiment (e.g., "come look
+at all the idiots in community X") and led to increased antisocial activity in the target community. We analyzed
+a total of 137,113 cross-links between 36,000 communities.
+
+Our analysis revealed a number of important trends related to conflict on Reddit, with general implications
+for intercommunity conflict on the web. For example, we found that:
+  - A small number of communities initiate most conflicts, with 1% of communities initiating 74% of
+    all conflicts. The image above shows a 2-dimensional map of the various Reddit communities.
+    The red nodes/communities in this map initiate a large amount of conflict.
+  - Topically similar, but with opposing ideology, groups fight: We can see that these conflict intiating
+    nodes are rare and clustered together in certain social regions. These communities attack other communities
+    that are similar in topic but different in point of view.
+  - Conflicts are initiated by active community members but are carried out by less active users. It is
+    usually highly active users that post hyperlinks to target communities, but it is more peripheral
+    users who actually follow these links and particpate in conflicts.
+  - Conflicts are marked by the formation of "echo-chambers", where users in the discussion thread primarily
+    interact with other members of their own community (i.e., "attackers" interact with "attackers" and
+    "defenders" with "defenders").
+  - Conflicts have long-term adverse effects on the engagement of members of the target community, but these
+    adverse effects are mitigated when the "defending" community members engage in heated, direct debates
+    with the "attackers".
+  - Conflicts can be defended against when the attacked community directly engages with ('fights back')
+    the attacking users.
+
+Predicting conflicts: We developed a novel deep learning (LSTM-based) model to predict whether a link from one
+community to another is going to lead to conflict. In our model, we learn vector representations, or embeddings,
+of users and communities that are optimized to capture the social relationships between users and communities,
+and we use these embeddings to give our LSTM model information about the social context in which it is making
+predictions.
+
+Our approach outperforms a number of strong baselines and could be used to create a 'raid' early-warning system
+for moderators to inform them of a potential impending influx of toxic users.
