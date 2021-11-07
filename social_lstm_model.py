@@ -14,6 +14,8 @@ from sklearn.metrics import roc_auc_score
 import constants
 from embeddings import Embeddings
 
+model = None
+
 class SocialLSTM(nn.Module):
     """
     LSTM model for predicting conflict between Reddit communities.
@@ -414,3 +416,4 @@ if __name__ == "__main__":
         model.cuda()
     optimizer = torch.optim.Adam(ifilter(lambda p : p.requires_grad, model.parameters()), lr=args.learning_rate)
     auc = train(model, train_data, val_data, test_data, optimizer, epochs=10, log_file=args.log_file, save_embeds=args.save_embeds)
+    

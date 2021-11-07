@@ -1,4 +1,25 @@
 # AUM SHREEGANESHAAYA NAMAH|| AUM SHREEHANUMATE NAMAH||
+from PIL import Image
+import numpy as np
+
+# all = [ 'after_effecs' ]
+all = [ 'after_effecs', 'comments_rise', 'loss', 'pagerank', 'phases', 'arch', 'communities', 'model', 'percent' ]
+
+for name in all:
+  print(f"Doing for {name}.png")
+  img = Image.open(f'/home/ishanhmisra/AUM/SOC471A_Project/img/{name}.png')
+  arr = np.asarray(img)
+  img.close()
+
+  f = open(f'/home/ishanhmisra/AUM/SOC471A_Project/img/{name}.csv', "w")
+  for row in arr:
+    for i, col in enumerate(row):
+      if i != 0: f.write(",")
+      f.write(f"{(col[0]/255) - 0.5},{(col[1]/255) - 0.5},{(col[2]/255) - 0.5}")
+    f.write("\n")
+  f.close()
+
+# AUM SHREEGANESHAAYA NAMAH|| AUM SHREEHANUMATE NAMAH||
 import torch
 import random
 import argparse

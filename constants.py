@@ -27,6 +27,8 @@ SUBREDDIT_IDS=DATA_HOME+"/embeddings/sub_vecs.vocab"
 POST_INFO=DATA_HOME+"/detailed_data/post_crosslink_info.tsv"
 LABEL_INFO=DATA_HOME+"/detailed_data/label_info.tsv"
 PREPROCESSED_DATA=DATA_HOME+"/detailed_data/tokenized_posts.tsv"
+ANALYSIS_SECONDARY_DATA = "./data_secondary/"
+ANALYSIS_SECONDARY_IMGS = "./img/"
 
 VOCAB_SIZE = 174558
 NUM_USERS = 118381
