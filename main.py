@@ -107,5 +107,7 @@ if __name__ == "__main__":
     optimizer = torch.optim.Adam(ifilter(lambda p : p.requires_grad, social_lstm_model.model.parameters()), lr=args.learning_rate)
     auc = train(social_lstm_model.model, train_data, val_data, test_data, optimizer, epochs=10, log_file=args.log_file, save_embeds=args.save_embeds)
 
+    # required analysis parameeters get stored in constants.SUMMARY_REQ till we reach this point - just save the images from CSV and summary also.
     sna.saveImgs()
+    sna.saveSummary()
     

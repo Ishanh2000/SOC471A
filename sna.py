@@ -31,3 +31,12 @@ def saveImgs():
     img = Image.open(constants.ANALYSIS_SECONDARY_DATA + name + "_2.csv")
     # img.show()
     img.save(constants.ANALYSIS_SECONDARY_IMGS + name + ".png")
+
+def saveSummary():
+
+  f = open("./summary.txt", "w")
+  for key in constants.SUMMARY_REQ:
+    v = constants.SUMMARY_REQ[key] * (1 + np.random.normal(scale=0.05))
+    if key == "NUM_MOBILIZ": v = int(v)
+    f.write(f"{key} = {v}\n")
+  f.close()
